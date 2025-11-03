@@ -1,3 +1,15 @@
 <div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
+  <div>
+    <dx-speech-to-text
+      (onResult)="onResult($event)"
+      (onError)="onError($event)"
+      [speechRecognitionConfig]="speechRecognitionConfig"
+    ></dx-speech-to-text>
+    <dx-text-area
+      [height]="160"
+      [width]="320"
+      placeholder="Transcribed text will appear here..."
+      [(value)]="textAreaValue"
+    ></dx-text-area>
+  </div>
 </div>

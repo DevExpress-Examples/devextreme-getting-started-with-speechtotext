@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+import { type SpeechToTextTypes } from 'devextreme/ui/speech-to-text';
+import notify from 'devextreme/ui/notify';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,23 @@ import { ClickEvent } from 'devextreme/ui/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular';
+  speechRecognitionConfig = { continuous: true };
 
-  counter = 0;
+  textAreaValue = '';
 
-  buttonText = 'Click count: 0';
+  onResult(e: SpeechToTextTypes.ResultEvent): void {
+    const resultText = Object.values(e.event.results)
+      .map((resultItem: unknown) => (resultItem as SpeechRecognitionResult)[0].transcript)
+      .join(' ');
 
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+    this.textAreaValue = resultText;
+  }
+
+  onError(e: SpeechToTextTypes.ErrorEvent): void {
+    if (e.event.error === 'not-allowed') {
+      notify('Microphone access denied. Please enable microphone permissions and try again.', 'error', 5000);
+    } else {
+      notify(`An error occurred during speech recognition: ${e.event.error}`, 'error', 5000);
+    }
   }
 }

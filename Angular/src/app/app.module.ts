@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DxButtonModule } from 'devextreme-angular/ui/button';
+import { DxTextAreaModule } from 'devextreme-angular/ui/text-area';
+import { DxSpeechToTextModule } from 'devextreme-angular/ui/speech-to-text';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DxButtonModule,
+    DxTextAreaModule,
+    DxSpeechToTextModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
