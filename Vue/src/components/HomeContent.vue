@@ -20,7 +20,7 @@ function handleResult(e: DxSpeechToTextTypes.ResultEvent): void {
 
 function handleError(e: DxSpeechToTextTypes.ErrorEvent): void {
   if (e.event.error === 'not-allowed') {
-    notify('Microphone access denied. Please enable microphone permissions and try again.', 'error', 5000);
+    notify('Microphone access denied. Please grant microphone permissions and try again.', 'error', 5000);
   } else {
     notify(`An error occurred during speech recognition: ${e.event.error}`, 'error', 5000);
   }
