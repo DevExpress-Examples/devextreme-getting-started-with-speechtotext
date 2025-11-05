@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import './App.css';
-import 'devextreme/dist/css/dx.material.blue.light.compact.css';
+import 'devextreme/dist/css/dx.fluent.blue.light.css';
 import { SpeechToText, type SpeechToTextTypes } from 'devextreme-react/speech-to-text';
 import { TextArea } from 'devextreme-react/text-area';
 import notify from 'devextreme/ui/notify';
