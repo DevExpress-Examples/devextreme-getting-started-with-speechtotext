@@ -1,8 +1,8 @@
 <div class="default-style">
   <div>
     <dx-speech-to-text
-      (onResult)="onResult($event)"
-      (onError)="onError($event)"
+      (onResult)="handleResult($event)"
+      (onError)="handleError($event)"
       [speechRecognitionConfig]="speechRecognitionConfig"
     ></dx-speech-to-text>
     <dx-text-area
