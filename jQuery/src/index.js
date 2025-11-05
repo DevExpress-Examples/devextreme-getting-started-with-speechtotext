@@ -18,7 +18,7 @@ $(() => {
     },
     onError(e) {
       if (e.event.error === 'not-allowed') {
-        DevExpress.ui.notify('Microphone access denied. Please enable microphone permissions and try again.', 'error', 5000);
+        DevExpress.ui.notify('Microphone access denied. Please grant microphone permissions and try again.', 'error', 5000);
       } else {
         DevExpress.ui.notify(`An error occurred during speech recognition: ${e.event.error}`, 'error', 5000);
       }
