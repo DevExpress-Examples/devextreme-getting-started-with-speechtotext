@@ -5,9 +5,9 @@ import { SpeechToText, type SpeechToTextTypes } from 'devextreme-react/speech-to
 import { TextArea } from 'devextreme-react/text-area';
 import notify from 'devextreme/ui/notify';
 
-function App(): JSX.Element {
-  const speechRecognitionConfig = { continuous: true };
+const speechRecognitionConfig = { continuous: true };
 
+function App(): JSX.Element {
   const [textAreaValue, setTextAreaValue] = useState<string>('');
 
   const handleResult = useCallback((e: SpeechToTextTypes.ResultEvent): void => {
