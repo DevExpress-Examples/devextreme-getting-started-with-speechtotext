@@ -11,7 +11,8 @@ const speechRecognitionConfig = { continuous: true };
 const textAreaValue = ref<string>('');
 
 function handleResult(e: DxSpeechToTextTypes.ResultEvent): void {
-  const resultText = Object.values(e.event.results)
+  const speechEvent = e.event as SpeechRecognitionEvent;
+  const resultText = Object.values(speechEvent.results)
     .map((resultItem: unknown) => (resultItem as SpeechRecognitionResult)[0].transcript)
     .join(' ');
 
@@ -19,10 +20,11 @@ function handleResult(e: DxSpeechToTextTypes.ResultEvent): void {
 }
 
 function handleError(e: DxSpeechToTextTypes.ErrorEvent): void {
-  if (e.event.error === 'not-allowed') {
+  const speechEvent = e.event as SpeechRecognitionErrorEvent;
+  if (speechEvent.error === 'not-allowed') {
     notify('Microphone access denied. Please grant microphone permissions and try again.', 'error', 5000);
   } else {
-    notify(`An error occurred during speech recognition: ${e.event.error}`, 'error', 5000);
+    notify(`An error occurred during speech recognition: ${speechEvent.error}`, 'error', 5000);
   }
 }
 
@@ -42,3 +44,12 @@ function handleError(e: DxSpeechToTextTypes.ErrorEvent): void {
     />
   </div>
 </template>
+<style scoped>
+.demo-container {
+  margin: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+</style>
