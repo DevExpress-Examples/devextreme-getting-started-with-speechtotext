@@ -2,3 +2,11 @@
   margin: 50px;
   width: 90vw;
 }
+
+.demo-container {
+  margin: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
