@@ -5,7 +5,7 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "types": ["node", "estree"],
+    "types": ["node", "estree", "dom-speech-recognition"],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
