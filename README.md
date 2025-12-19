@@ -6,7 +6,7 @@
 <!-- default badges end -->
 # DevExtreme SpeechToText - Getting Started
 
-This repository stores code for the following DevExpress tutorial: [Getting Started with DevExtreme SpeechToText](https://js.devexpress.com/Documentation/Guide/UI_Components/SpeechToText/Getting_Started_with_SpeechToText/). The project creates a SpeechToText and configures the component's core settings.
+This repository stores code for the following DevExpress tutorial: [Getting Started with DevExtreme SpeechToText](https://js.devexpress.com/Documentation/Guide/UI_Components/SpeechToText/Getting_Started_with_SpeechToText/). This project creates a SpeechToText and configures the component's core settings.
 
 <div align="center"><img src="./SpeechToText.png" /></div>
 
