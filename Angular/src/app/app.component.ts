@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { type DxSpeechToTextTypes } from 'devextreme-angular/ui/speech-to-text';
+import { DxSpeechToTextModule, type DxSpeechToTextTypes } from 'devextreme-angular/ui/speech-to-text';
+import { DxTextAreaModule } from 'devextreme-angular/ui/text-area';
 import notify from 'devextreme/ui/notify';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
+    imports: [DxSpeechToTextModule, DxTextAreaModule],
 })
 export class AppComponent {
   speechRecognitionConfig = { continuous: true };
