@@ -13,6 +13,7 @@
     "lint": "npm-run-all -p -c lint-ts lint-css lint-html"
   },
   "private": true,
+  "type": "module",
   "dependencies": {
     "@angular/animations": "^21.2.14",
     "@angular/common": "^21.2.14",
