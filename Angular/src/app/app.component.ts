@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DxSpeechToTextModule, type DxSpeechToTextTypes } from 'devextreme-angular/ui/speech-to-text';
 import { DxTextAreaModule } from 'devextreme-angular/ui/text-area';
 import notify from 'devextreme/ui/notify';
@@ -7,6 +7,7 @@ import notify from 'devextreme/ui/notify';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [DxSpeechToTextModule, DxTextAreaModule],
 })
 export class AppComponent {
